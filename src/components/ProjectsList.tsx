@@ -12,7 +12,14 @@ type ProjectsListProps = {
 };
 
 const ProjectsList: React.FC<ProjectsListProps> = ({ projects, className }) => {
-  if (!projects || projects.length === 0) return null;
+  if (!projects || projects.length === 0)
+    return (
+      <div className="col-span-full py-10">
+        <span className="text-center block w-full text-gray-500">
+          No projects found
+        </span>
+      </div>
+    );
 
   return (
     <div

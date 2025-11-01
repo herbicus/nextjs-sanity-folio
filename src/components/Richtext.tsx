@@ -38,9 +38,17 @@ const RichText: React.FC<RichTextProps> = ({
     classes || ""
   }`;
 
+  // Handle wysiwyg objects that have a content property (fallback for edge cases)
+  // Note: Queries should extract .content, but this handles both array and object formats
+  const portableTextValue = content?._type === "wysiwyg" && Array.isArray(content?.content)
+    ? content.content
+    : Array.isArray(content)
+    ? content
+    : content;
+
   return (
     <div className={clsx(classNames)}>
-      <PortableText value={content} />
+      <PortableText value={portableTextValue} />
     </div>
   );
 };

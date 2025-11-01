@@ -9,5 +9,9 @@ export default async function Page() {
     query: POSTS_QUERY,
   });
 
-  return <Posts posts={posts} />;
+  return (
+    <section className="site-container site-max-w py-10">
+      <Posts posts={posts} />
+    </section>
+  );
 }

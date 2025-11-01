@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <Image
           src={src}
           sizes="(min-width: 1024px) 100vw, (min-width: 640px) 50vw, 100vw"
-          className="absolute inset-0 object-contain transition-all ease-out duration-500 group-hover:opacity-10 z-10"
+          className="absolute w-full h-full inset-0 object-center object-contain transition-all ease-out duration-500 group-hover:opacity-10 z-10"
           placeholder={project?.thumbnail?.lqip ? "blur" : "empty"}
           blurDataURL={project?.thumbnail?.lqip}
           width={700}
@@ -26,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           alt={project?.title ?? ""}
         />
       ) : null}
-      
+
       <span className="absolute inset-0 z-20 flex flex-col flex-wrap items-center justify-center text-center text-gray-900 opacity-0 transition-all duration-300 group-hover:opacity-100">
         <span className="mb-1 block font-nunito text-lg font-black">
           {project.title}

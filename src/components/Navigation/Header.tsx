@@ -58,7 +58,7 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
               <li key={`desktop-nav-item-${index}`}>
                 <Link
                   href={item.value}
-                  className="text-primary uppercase tracking-wide font-bold hover:text-secondary text-sm"
+                  className="text-primary uppercase tracking-wide font-bold hover:text-secondary"
                 >
                   {item.name}
                 </Link>

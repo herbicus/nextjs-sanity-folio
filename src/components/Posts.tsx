@@ -1,23 +1,31 @@
 // src/components/Posts.tsx
+import React from "react";
+import Link from "next/link";
 
 import { POSTS_QUERYResult } from "../../sanity.types";
 
 export function Posts({ posts }: { posts: POSTS_QUERYResult }) {
+  if (!posts)
+    return (
+      <div className="py-10">
+        <span className="text-center block w-full text-gray-500">
+          No posts found
+        </span>
+      </div>
+    );
+
   return (
-    <>
-    <h1 className="text-blue-500 text-5xl font-bold">Latest Posts</h1>
-    <ul className="container mx-auto grid grid-cols-1 divide-y divide-blue-100">
+    <ul className="grid grid-cols-1 divide-y divide-blue-100">
       {posts.map((post) => (
         <li key={post._id}>
-          <a
-            className="block p-4 hover:bg-blue-50"
+          <Link
+            className="block p-4 hover:bg-blue-50 text-lg font-bold"
             href={`/posts/${post?.slug?.current}`}
           >
             {post?.title}
-          </a>
+          </Link>
         </li>
       ))}
     </ul>
-    </>
   );
 }

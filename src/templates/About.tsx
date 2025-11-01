@@ -39,22 +39,22 @@ export default function AboutTemplate({
             ) : null}
           </div>
           <div className="col-span-1 md:col-span-6 lg:col-span-5">
-            {aboutText?.content ? (
+            {aboutText ? (
               <RichText
-                content={aboutText.content}
-                theme={aboutText.theme}
-                textAlign={aboutText.textAlign}
+                content={aboutText}
+                theme="light"
+                textAlign="left"
               />
             ) : null}
           </div>
         </div>
       </section>
       <section className="site-container site-max-w py-10">
-        {aboutTech?.content ? (
+        {aboutTech ? (
           <RichText
-            content={aboutTech.content}
-            theme={aboutTech.theme}
-            textAlign={aboutTech.textAlign}
+            content={aboutTech}
+            theme="light"
+            textAlign="left"
           />
         ) : null}
       </section>
