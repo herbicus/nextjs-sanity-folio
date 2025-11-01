@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+  --color-primary: #393b39;
+  --color-secondary: #cd4828;
+  --font-sans:
+    "Geist", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono:
+    "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    Liberation Mono, monospace;
+
+  /* Custom Font Sizes */
+  --font-size-2xs: 0.625rem; /* 10px */
+  --font-size-3xs: 0.5rem; /* 8px */
+
+  /* Custom Max Widths */
+  --max-width-8xl: 90rem; /* 1440px */
+  --max-width-9xl: 108rem; /* 1728px */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+@utility site-container {
+  @apply mx-auto w-full px-4 lg:px-8;
+}
+
+@utility site-max-w {
+  @apply max-w-8xl;
+}
+
+@utility site-grid {
+  @apply grid grid-cols-4 gap-4 lg:grid-cols-12;
+}
