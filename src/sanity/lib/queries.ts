@@ -21,7 +21,7 @@ export const POST_QUERY =
 }`);
 
 export const PROJECTS_QUERY =
-  defineQuery(`*[_type == "projectPost" && defined(slug.current)] | order(sortOrder asc, _createdAt desc){
+  defineQuery(`*[_type == "projectPost" && defined(slug.current) && include == true] | order(orderRank){
   _id,
   title,
   slug,
@@ -47,7 +47,7 @@ export const PROJECT_QUERY =
   description,
   thumbnail{..., "lqip": asset->metadata.lqip},
   images[]{..., "lqip": asset->metadata.lqip},
-  sortOrder
+  orderRank
 }`);
 
 // Site content queries

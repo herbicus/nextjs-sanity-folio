@@ -1,6 +1,7 @@
 import type { StructureResolver } from "sanity/structure";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
 
 import {
   faClipboard,
@@ -11,18 +12,20 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 
 // https://www.sanity.io/docs/structure-builder-cheat-sheet
-export const structure: StructureResolver = (S) =>
+export const structure: StructureResolver = (S, context) =>
   S.list()
     .title("Content")
     .items([
       S.documentTypeListItem("site")
         .title("Site")
         .icon(() => React.createElement(FontAwesomeIcon, { icon: faWindowMaximize })),
-      S.documentTypeListItem("projectPost")
-        .title("Projects")
-        .icon(() =>
-          React.createElement(FontAwesomeIcon, { icon: faClipboard })
-        ),
+      orderableDocumentListDeskItem({
+        type: "projectPost",
+        title: "Projects",
+        S,
+        context,
+        icon: () => React.createElement(FontAwesomeIcon, { icon: faClipboard }),
+      }),
 
       S.divider(),
 

@@ -1,4 +1,5 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
+import { orderRankField } from "@sanity/orderable-document-list";
 
 export const projectPostType = defineType({
   name: "projectPost",
@@ -54,11 +55,7 @@ export const projectPostType = defineType({
       of: [defineArrayMember({ type: "image" })],
       title: "Project Images",
     }),
-    defineField({
-      name: "sortOrder",
-      type: "number",
-      title: "Sort Order",
-    }),
+    orderRankField({ type: "projectPost" }),
   ],
 });
 
