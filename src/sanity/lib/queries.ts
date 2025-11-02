@@ -45,8 +45,8 @@ export const PROJECT_QUERY =
   category,
   projectUrl,
   description,
-  thumbnail,
-  images,
+  thumbnail{..., "lqip": asset->metadata.lqip},
+  images[]{..., "lqip": asset->metadata.lqip},
   sortOrder
 }`);
 
