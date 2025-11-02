@@ -52,12 +52,12 @@ export const PROJECT_QUERY =
 
 // Site content queries
 export const ABOUT_QUERY = defineQuery(`*[_type == "site"][0]{
-  "aboutText": aboutText.content,
-  "aboutTech": aboutTech.content,
+  aboutText,
+  aboutTech,
   aboutImage{..., "lqip": asset->metadata.lqip}
 }`);
 
 export const CONTACT_QUERY = defineQuery(`*[_type == "site"][0]{
-  "contactInfo": contactInfo.content,
+  contactInfo,
   contactImage{..., "lqip": asset->metadata.lqip}
 }`);
