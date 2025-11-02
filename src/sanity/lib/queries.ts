@@ -46,6 +46,7 @@ export const PROJECT_QUERY =
   projectUrl,
   description,
   thumbnail{..., "lqip": asset->metadata.lqip},
+  videos,
   images[]{..., "lqip": asset->metadata.lqip},
   orderRank
 }`);

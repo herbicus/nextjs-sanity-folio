@@ -1,10 +1,13 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
 import { orderRankField } from "@sanity/orderable-document-list";
 
+import {CodeBlockIcon} from '@sanity/icons'
+
 export const projectPostType = defineType({
   name: "projectPost",
   type: "document",
   title: "Projects",
+  icon: CodeBlockIcon,
   fields: [
     defineField({
       name: "title",
@@ -50,6 +53,13 @@ export const projectPostType = defineType({
       type: "image",
     }),
     defineField({
+      name: "videos",
+      type: "array",
+      title: "Videos",
+      description: "Array of video URLs (mainly YouTube URLs)",
+      of: [defineArrayMember({ type: "url" })],
+    }),
+    defineField({
       name: "images",
       type: "array",
       of: [defineArrayMember({ type: "image" })],
@@ -57,6 +67,18 @@ export const projectPostType = defineType({
     }),
     orderRankField({ type: "projectPost" }),
   ],
+  preview: {
+    select: {
+      title: "title",
+      include: "include",
+    },
+    prepare({ title, include }) {
+      return {
+        title,
+        subtitle: include ? undefined : "Not Listed",
+      };
+    },
+  },
 });
 
 
