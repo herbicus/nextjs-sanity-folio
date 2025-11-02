@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import RichText from "@/components/Richtext";
+import LabelLockup from "@/components/SVGs/LabelLockup";
 
 type AboutProps = {
   aboutImage?: any;
@@ -21,8 +22,8 @@ export default function AboutTemplate({
 
   return (
     <>
-      <section className="site-container site-max-w pt-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-x-6">
+      <section className="site-container site-max-w site-grid pt-10">
+        <div className="col-span-4 lg:col-span-10 lg:col-start-2 grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-x-6">
           <div className="col-span-1 md:col-span-6 lg:col-span-7">
             {aboutImgSrc ? (
               <Image
@@ -39,24 +40,21 @@ export default function AboutTemplate({
             ) : null}
           </div>
           <div className="col-span-1 md:col-span-6 lg:col-span-5">
+            <LabelLockup className="w-full max-w-sm h-auto my-4 lg:mt-0" />
+
             {aboutText ? (
-              <RichText
-                content={aboutText}
-                theme="light"
-                textAlign="left"
-              />
+              <RichText content={aboutText} theme="light" textAlign="left" />
             ) : null}
           </div>
         </div>
       </section>
-      <section className="site-container site-max-w py-10">
-        {aboutTech ? (
-          <RichText
-            content={aboutTech}
-            theme="light"
-            textAlign="left"
-          />
-        ) : null}
+
+      <section className="site-container site-max-w py-10 site-grid">
+        <div className="col-span-4 lg:col-span-10 lg:col-start-2">
+          {aboutTech ? (
+            <RichText content={aboutTech} theme="light" textAlign="left" />
+          ) : null}
+        </div>
       </section>
     </>
   );
