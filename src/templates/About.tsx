@@ -25,6 +25,8 @@ export default function AboutTemplate({
       <section className="site-container site-max-w site-grid pt-10">
         <div className="col-span-4 lg:col-span-10 lg:col-start-2 grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-x-6">
           <div className="col-span-1 md:col-span-6 lg:col-span-7">
+          <LabelLockup className="w-full max-w-sm h-auto mb-4 md:hidden" />
+
             {aboutImgSrc ? (
               <Image
                 src={aboutImgSrc}
@@ -40,7 +42,7 @@ export default function AboutTemplate({
             ) : null}
           </div>
           <div className="col-span-1 md:col-span-6 lg:col-span-5">
-            <LabelLockup className="w-full max-w-sm h-auto my-4 lg:mt-0" />
+            <LabelLockup className="hidden w-full max-w-sm h-auto my-4 md:block md:mt-0" />
 
             {aboutText ? (
               <RichText content={aboutText} theme="light" textAlign="left" />

@@ -4,6 +4,8 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { PROJECTS_QUERY } from "@/sanity/lib/queries";
 import ProjectsList from "@/components/ProjectsList";
 
+export const dynamic = "force-dynamic";
+
 export default async function LandingPage() {
   const { data: projects } = await sanityFetch({ query: PROJECTS_QUERY });
 

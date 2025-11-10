@@ -15,18 +15,17 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ url, className }) => {
     <div
       className={clsx(
         "w-full relative aspect-video bg-black overflow-hidden",
+        "*:absolute *:inset-0 *:object-cover",
         className
       )}
     >
-      <div className="absolute inset-0 w-full h-full">
-        <ReactPlayer
-          src={url}
-          width="100%"
-          height="100%"
-          controls
-          playing={false}
-        />
-      </div>
+      <ReactPlayer
+        src={url}
+        width="100%"
+        height="100%"
+        controls
+        playing={false}
+      />
     </div>
   );
 };

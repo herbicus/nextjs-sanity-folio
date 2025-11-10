@@ -71,11 +71,13 @@ export const projectPostType = defineType({
     select: {
       title: "title",
       include: "include",
+      media: "thumbnail",
     },
-    prepare({ title, include }) {
+    prepare({ title, include, media }) {
       return {
         title,
         subtitle: include ? undefined : "Not Listed",
+        media,
       };
     },
   },

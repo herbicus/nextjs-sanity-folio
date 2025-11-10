@@ -16,7 +16,7 @@ const RichText: React.FC<RichTextProps> = ({
   textAlign = "left",
   classes,
 }) => {
-  const defaultClasses = `prose max-w-none prose-headings:font-semibold prose-headings:leading-tight prose-h1:text-4xl prose-h1:lg:text-8xl prose-h2:text-3xl prose-h2:lg:text-6xl prose-h3:text-3xl prose-h3:lg:text-5xl prose-h4:text-xl prose-h4:lg:text-3xl prose-h5:text-base prose-h5:lg:text-2xl`;
+  const defaultClasses = `prose max-w-none prose-headings:font-semibold prose-headings:leading-tight prose-h1:text-4xl prose-h1:lg:text-8xl prose-h2:text-3xl prose-h2:lg:text-6xl prose-h3:text-3xl prose-h3:lg:text-5xl prose-h4:text-xl prose-h4:lg:text-3xl prose-h5:text-base prose-h5:lg:text-2xl prose-a:transition-colors prose-a:hover:text-secondary`;
 
   const getTextAlignClass = (txtAlign: string): string => {
     if (txtAlign === "right") {
