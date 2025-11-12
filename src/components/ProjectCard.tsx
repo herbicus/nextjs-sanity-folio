@@ -16,13 +16,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       {src ? (
         <Image
           src={src}
-          sizes="(min-width: 1024px) 100vw, (min-width: 640px) 50vw, 100vw"
+          // sizes="(min-width: 1024px) 100vw, (min-width: 640px) 50vw, 100vw"
           className="absolute w-full h-full inset-0 object-center object-contain transition-all ease-out duration-500 group-hover:opacity-10 z-10"
           placeholder={project?.thumbnail?.lqip ? "blur" : "empty"}
           blurDataURL={project?.thumbnail?.lqip}
-          width={700}
-          height={700}
-          layout="responsive"
+          width={320}
+          height={320}
           alt={project?.title ?? ""}
         />
       ) : null}

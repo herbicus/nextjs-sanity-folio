@@ -24,7 +24,7 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ projects, className }) => {
   return (
     <div
       className={clsx(
-        "grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
+        "grid gap-x-4 gap-y-1 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-20",
         className
       )}
     >
