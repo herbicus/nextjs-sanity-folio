@@ -8,14 +8,14 @@ type ProjectCardProps = {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const hasThumb = Boolean(project?.thumbnail);
-  const src = hasThumb ? urlFor(project.thumbnail).width(320).height(320).url() : undefined;
+  const src = hasThumb ? urlFor(project.thumbnail).width(700).height(700).url() : undefined;
 
   return (
     <div className="group aspect-square w-full relative">
       {src ? (
         <Image
           src={src}
-          className="absolute w-full h-auto inset-0 object-center object-contain transition-all ease-out duration-500 group-hover:opacity-10 z-10 max-w-[320px]"
+          className="absolute w-full h-auto inset-0 object-center object-contain transition-all ease-out duration-500 group-hover:opacity-10 z-10"
           placeholder={project?.thumbnail?.lqip ? "blur" : "empty"}
           blurDataURL={project?.thumbnail?.lqip}
           width={320}
