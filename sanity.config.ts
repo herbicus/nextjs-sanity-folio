@@ -15,6 +15,9 @@ import { apiVersion, dataset, projectId } from "./src/sanity/env";
 import { schema } from "./src/sanity/schemaTypes";
 import { structure } from "./src/sanity/structure";
 
+const BASE_URL =
+  process.env.NEXT_PUBLIC_BASE_URL || "https://herbtorres.com/studio";
+
 export default defineConfig({
   basePath: "/studio",
   projectId,
@@ -36,4 +39,13 @@ export default defineConfig({
     }),
     visionTool({ defaultApiVersion: apiVersion }),
   ],
+  beta: {
+    create: {
+      startInCreateEnabled: true,
+      fallbackStudioOrigin:
+        process.env.NODE_ENV === "production"
+          ? `${BASE_URL}/ studio`
+          : "http://localhost:3000/studio",
+    },
+  },
 });
