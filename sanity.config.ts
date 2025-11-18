@@ -15,6 +15,8 @@ import { apiVersion, dataset, projectId } from "./src/sanity/env";
 import { schema } from "./src/sanity/schemaTypes";
 import { structure } from "./src/sanity/structure";
 
+import StudioLogo from "./src/components/SVGs/StudioLogo";
+
 const BASE_URL =
   process.env.NEXT_PUBLIC_BASE_URL || "https://herbtorres.com/studio";
 
@@ -23,6 +25,7 @@ export default defineConfig({
   projectId,
   dataset,
   title: "Herb Torres Portfolio",
+  icon: StudioLogo,
   // Add and edit the content schema in the './sanity/schemaTypes' folder
   schema,
   plugins: [
