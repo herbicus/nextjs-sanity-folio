@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "schema:deploy": "npx sanity schema deploy && npm run schema:copy",
+    "schema:copy": "mkdir -p public/studio/static && cp -r dist/static/* public/studio/static/"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
