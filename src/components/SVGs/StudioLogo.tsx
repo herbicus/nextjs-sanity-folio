@@ -8,7 +8,14 @@ export default function StudioLogo() {
       alt="Studio Logo"
       width={144}
       height={144}
-      className="w-full max-w-full h-auto"
+      style={{
+        color: "transparent",
+        display: "block",
+        width: "100%",
+        maxWidth: "100%",
+        height: "auto",
+        objectFit: "contain",
+      }}
     />
   );
 }

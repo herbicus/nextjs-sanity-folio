@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "createdAt": "2025-11-18T15:59:43.912Z",
+  "createdAt": "2025-11-18T16:17:08.982Z",
   "workspaces": [
     {
-      "name": "herb-torres-portfolio-studio",
+      "name": "default",
       "title": "Herb Torres Portfolio",
       "basePath": "/studio",
       "projectId": "qppkbymz",
       "dataset": "production",
-      "icon": "<img alt=\"Studio Logo\" loading=\"lazy\" width=\"144\" height=\"144\" decoding=\"async\" data-nimg=\"1\" class=\"w-full max-w-full h-auto\" style=\"color:transparent\" srcset=\"/_next/image?url=%2Fapple-touch-icon-144x144.png&amp;w=256&amp;q=75 1x, /_next/image?url=%2Fapple-touch-icon-144x144.png&amp;w=384&amp;q=75 2x\" src=\"/_next/image?url=%2Fapple-touch-icon-144x144.png&amp;w=384&amp;q=75\">",
+      "icon": "<img alt=\"Studio Logo\" loading=\"lazy\" width=\"144\" height=\"144\" decoding=\"async\" data-nimg=\"1\" style=\"color:transparent;display:block;width:100%;max-width:100%;height:auto;object-fit:contain\" srcset=\"/_next/image?url=%2Fapple-touch-icon-144x144.png&amp;w=256&amp;q=75 1x, /_next/image?url=%2Fapple-touch-icon-144x144.png&amp;w=384&amp;q=75 2x\" src=\"/_next/image?url=%2Fapple-touch-icon-144x144.png&amp;w=384&amp;q=75\">",
       "mediaLibrary": {
         "enabled": false
       },
